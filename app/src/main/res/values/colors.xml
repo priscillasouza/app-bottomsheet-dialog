@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     
     <color name="background_button_dialog">#a85eb4</color>
+    <color name="background_bottom_sheet">#BEBABA</color>
 </resources>
