@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BottomSheetDialog</string>
     <string name="open_bottomsheet">Abrir bottomSheet</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_title_home">O impacto da tecnologia em nossas vidas</string>
     <string name="text_description_home">A tecnologia facilita muito a nossa rotina e é um ótimo entretenimento. Com apenas uns cliques compartilhamos coisas pessoais, entramos em contato com aquele parente distante, descobrimos uma nova música e assistimos vários episódios de determinada série, mesmo offline.</string>
