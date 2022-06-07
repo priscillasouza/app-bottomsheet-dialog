@@ -2,6 +2,7 @@ package com.example.bottomsheetdialog
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
@@ -18,6 +19,11 @@ class BottomSheetActivity : AppCompatActivity() {
         binding = ActivityBottomSheetBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
+        setSupportActionBar(binding?.toolbarBottomSheet)
+
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
         val bottomSheet = binding?.icludeBottomSheet?.root
 
         binding?.buttonBottomSheetModal?.setOnClickListener {
@@ -32,6 +38,16 @@ class BottomSheetActivity : AppCompatActivity() {
         customDialog()
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun customDialog() {
         val view: View = layoutInflater.inflate(R.layout.custom_dialog_modal, null)
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
@@ -42,11 +58,13 @@ class BottomSheetActivity : AppCompatActivity() {
         view.findViewById<Button>(R.id.buttonOk).setOnClickListener {
             alert.dismiss()
         }
+
         view.findViewById<Button>(R.id.buttonCancel).setOnClickListener {
-            Intent(this, HomeActivity::class.java)
+            alert.also {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
         }
         alert.show()
     }
-
-
 }
