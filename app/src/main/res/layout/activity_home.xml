@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIconTint="@color/white"
-            app:title="Home"
+            app:title="@string/text_title_toolbar_home"
             app:titleCentered="true"
             app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Mais informações"
+        android:text="@string/text_button_home"
         style="@style/Text_button_dialog"
         android:layout_gravity="center"
         android:background="@drawable/background_button"/>
